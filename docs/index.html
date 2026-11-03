@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dinner Bowl Picker</title>
+<meta name="description" content="One spin picks a base, a protein, a produce, toppings and a sauce from what's in your kitchen.">
+<meta name="theme-color" content="#f3f2f2">
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="apple-touch-icon" href="favicon.svg">
+<link rel="stylesheet" href="broadsheet.css">
+<link rel="stylesheet" href="app.css">
+</head>
+<body>
+<main class="page">
+  <div class="masthead">
+    <div class="dateline">
+      <span class="edition">The Dinner Bowl Edition</span>
+      <button class="btn btn-ghost undo" id="undo" type="button" disabled title="Nothing to undo">
+        <svg width="18" height="18" viewBox="0 0 256 256" fill="none" stroke="currentColor" stroke-width="16" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M128 216a88 88 0 1 0-62.2-150.2L40 92" fill="currentColor" fill-opacity=".2" stroke="none"></path><path d="M128 216a88 88 0 1 0-62.2-150.2L40 92"></path><path d="M40 44v48h48"></path></svg>
+        Undo
+      </button>
+    </div>
+    <header class="hero">
+      <h1>What's in the bowl tonight?</h1>
+      <p>One spin picks a base, a protein, a produce, <span id="topping-word">two toppings</span> and a sauce from what's in your kitchen. Tap any pick to re-roll just that one.</p>
+    </header>
+  </div>
+
+  <div class="columns">
+    <section class="picker" aria-label="Your bowl">
+      <div class="slots" id="slots" aria-live="polite"></div>
+      <div class="spin-row">
+        <button class="btn btn-primary spin" id="spin" type="button">Spin my bowl</button>
+        <span class="combos" id="combos"></span>
+      </div>
+    </section>
+
+    <section class="kitchen" aria-labelledby="kitchen-title">
+      <div class="kitchen-head">
+        <h2 id="kitchen-title">Your kitchen</h2>
+        <button class="btn btn-ghost reset" id="reset" type="button">Reset to sample list</button>
+      </div>
+      <div class="cats" id="cats"></div>
+    </section>
+  </div>
+</main>
+<script src="icons.js"></script>
+<script src="app.js"></script>
+</body>
+</html>
